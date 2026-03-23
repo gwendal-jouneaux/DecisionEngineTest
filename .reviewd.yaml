@@ -1,0 +1,31 @@
+# Project-specific review instructions (merged with global instructions)
+# instructions: |
+#   Review ONLY code in the diff — never comment on unchanged or pre-existing code.
+#   Be constructive and specific — every issue must include a concrete suggested fix.
+#   Never suggest adding docstrings, inline comments, or tests unless clearly needed.
+#   If the diff is very large, prioritize critical items; mention nitpicks were deprioritized.
+
+# Commands to run in the PR worktree before reviewing
+# test_commands:
+#   - uv run ruff check .
+#   - uv run pytest tests/ -x -q
+
+# Which severities get inline comments (vs summary only)
+# Options: critical, suggestion, nitpick, good
+inline_comments_for: [critical]
+
+# Skip posting findings of these severities entirely
+# Options: critical, suggestion, nitpick, good
+# skip_severities: [nitpick]
+
+auto_approve:
+  enabled: true
+#  max_diff_lines: 100       # block approval if diff exceeds this
+  max_severity: suggesstion  # highest allowed severity (good < nitpick < suggestion < critical)
+#  max_findings: 3           # block if more findings than this (excludes "good" findings)
+#  rules: |                  # custom rules sent to the AI for the approval decision
+#    Only approve safe, simple changes:
+#    - Minor refactors, renames, typo fixes
+#    - Small bug fixes with obvious correctness
+#    - Config/settings tweaks, dependency bumps
+#    Never approve changes with migrations or complex business logic.

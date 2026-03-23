@@ -1,10 +1,3 @@
-languageDependenceLevels = ["Useless offset",
-"Aucun texte nécessaire dans le jeu",
-"Un peu de texte nécessaire - facilement mémorisable ou d'un post-it",
-"Texte modéré dans le jeu - a besoin d'une feuille d'aide ou d'un collage.",
-"Utilisation extensive du texte - conversion massive nécessaire pour être jouable.",
-"Injouable dans une autre langue"]
-
 def formatter(start, end):
     return '{}-{}'.format(start, end)
 
